@@ -4,12 +4,18 @@ setwd("/Users/josephwhiting/Desktop/College/Intro to Business Analytics /Project
 library(readr)
 library(ggplot2) #loading ggplot
 
-##Loading data set, and changing the the variables to numeric and storing it as Project_Dataset
+##Loading data set locally form computer, and changing the the variables to numeric and storing it as Project_Dataset
 Project_Dataset <- read_csv("Project_Dataset_2.csv", 
                                 col_types = cols(Quarters = col_number(), 
                                 VOO = col_number(), VGT = col_number(), 
                                 VXUS = col_number(), GDP = col_number(), 
                                 Unemployment = col_number()))
+##Loading data set from Github repository##
+Project_Dataset <- read_csv("https://raw.githubusercontent.com/joewhiting/PROJECT-I-ECON-494-F20/main/Project_Dataset_2.csv", 
+                            col_types = cols(Quarters = col_number(), 
+                                             VOO = col_number(), VGT = col_number(), 
+                                             VXUS = col_number(), GDP = col_number(), 
+                                             Unemployment = col_number()))
 View(Project_Dataset) #view the data set that I am using
 summary(Project_Dataset) #looking at summary of variables in the data set 
 Project_Dataset_2<- read_csv("Project_Dataset_1.csv")
